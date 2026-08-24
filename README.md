@@ -10,7 +10,7 @@ The project works through creating a docker container, which runs application.py
 | GET    | `/products/<id>/history`  | View price history for a product        |
 | DELETE | `/products/<id>`          | Remove a product and its history        |
 
-##Tech stack:
+## Tech stack:
   Python
   Flask
   PostgreSQL
@@ -29,8 +29,11 @@ Client (curl / browser)
    Flask App (application.py)
         |
         +--> POST /products --------> Scraper (cloudscraper + BeautifulSoup) --> PostgreSQL
+        |
         +--> GET /products ----------------------------------------------------> PostgreSQL
+        |
         +--> GET /products/<id>/history ------------------------------------------> PostgreSQL
+        |
         +--> DELETE /products/<id> -----------------------------------------------> PostgreSQL
 
 APScheduler (background, every 1 hour)
